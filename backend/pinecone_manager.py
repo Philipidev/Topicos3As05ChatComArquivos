@@ -7,8 +7,9 @@ from typing import List, Dict, Any, Optional
 from pinecone import Pinecone, ServerlessSpec
 from dotenv import load_dotenv
 
-# Carrega variáveis de ambiente
-load_dotenv()
+if os.getenv("STREAMLIT_CLOUD") != "1":
+    from dotenv import load_dotenv
+    load_dotenv()
 
 
 class PineconeManager:

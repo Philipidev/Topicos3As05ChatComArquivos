@@ -6,8 +6,9 @@ from typing import List
 from openai import OpenAI
 from dotenv import load_dotenv
 
-# Carrega variáveis de ambiente
-load_dotenv()
+if os.getenv("STREAMLIT_CLOUD") != "1":
+    from dotenv import load_dotenv
+    load_dotenv()
 
 
 class EmbeddingGenerator:

@@ -4,8 +4,9 @@ Arquivo de configuração centralizada para o assistente conversacional.
 import os
 from dotenv import load_dotenv
 
-# Carrega variáveis de ambiente
-load_dotenv()
+if os.getenv("STREAMLIT_CLOUD") != "1":
+    from dotenv import load_dotenv
+    load_dotenv()
 
 
 class Config:
