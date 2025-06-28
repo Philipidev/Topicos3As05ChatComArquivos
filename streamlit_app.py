@@ -1,9 +1,10 @@
 # streamlit_app.py
+
 import sys
 import os
 
-# Garante que os módulos backend sejam encontrados
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'backend')))
+# Garante que o backend seja encontrado nos imports
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "backend")))
 
-# Agora chama a interface diretamente
-from frontend import app  # frontend/app.py será executado
+# Executa diretamente a interface Streamlit do app
+exec(open("frontend/app.py").read())
